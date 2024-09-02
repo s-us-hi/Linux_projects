@@ -1,0 +1,19 @@
+pwd
+yum list all
+yum list installed
+yum install finger
+yum install finger -y
+yum info finger
+yum install libreport -y
+yum install libreport-2*
+yum deplist libreport
+yum check-update
+yum update
+yum update finger
+yum update -x finger
+which free
+rpm -qf /usr/bin/free
+yum provides /usr/bin/free
+cd /var/yum_rpm/rpmiso/Packages
+ls -ltr ftp*
+scp (copy ftp path) root@secondserverip:/tmp

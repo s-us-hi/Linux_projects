@@ -1,0 +1,50 @@
+pwd ======> (/var/www/html)
+ls -ltr
+mkdir "file name"
+cd "file name"/
+ls -ltr
+vim index.html
+pwd
+cat index.html <h1>"file name"</h1>
+cd /etc/httpd/conf
+ls -ltr httpd.conf
+cd /etc/httpd/conf
+ls -ltr
+yum install httpd -y
+vim httpd.conf ======>(:$ lastline)
+<VirtlHost 192.168.138.138:80>    =======> replace by your server id
+   ServerAdmin root@localhost.localdomain    ========> your server id type hostname you get in server
+   DocumentRoot /var/www/html
+   ServerName localhost.localdomain    ==========>same as second line
+   ErrorLog logs/dummy-host.example.com-error_log
+   CustomLog logs/dummy-host.example.com-access_log common
+</VirtualHost>
+vim httpd.conf ====>(again same command go to the last line :$ past the edited thing note* remove hash from all line and save)
+cd /var/www/html
+vim index.html
+<h1> linux project of webserver </h1>
+service httpd restart =====> (2 times execute)
+(go to vm)
+init 5 (if your in GUI)
+( Open vmware and open fire fox and past the ip address) 
+cd /var/log
+ls -ltr 
+cat error.log  ======>( if there is error you will come to know)
+cd /etc/httpd/ conf
+pwd
+vim httpd.conf =======> ((:$) past the things)
+<VirtlHost 192.168.138.138:80>    =======> replace by your server id
+    ServerAdmin root@localhost.localdomain    ========> your server id type hostname you get in server
+    DocumentRoot /var/www/html
+    alias/kr/ / var/www/html/kkr =====> add this line extra
+    ServerName localhost.localdomain    ==========>same as second line
+    ErrorLog logs/dummy-host.example.com-error_log
+    CustomLog logs/dummy-host.example.com-access_log common
+ </VirtualHost>
+mkdir "file name"
+cd "file name"
+vim index.html 
+inside <h1> write what u want </h1> 
+save the file
+service httpd restart 
+(and in Firefox search for server id the will be out come)

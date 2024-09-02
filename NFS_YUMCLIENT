@@ -1,0 +1,41 @@
+setenforce 0
+getenforce
+service iptable stop (this three command run in master as well as client server)
+cd /etc/yum.repos.d/ (in master server)
+cat master.repo
+mv /var/yum_rpm /var/ftp/pub
+ls -ld /var/ftp/pub/yum_rpm/rpmiso
+vim master.repo  =====> (change baseurl change /var/ftp/pub/)
+yum clean all
+yum repolist
+cd /etc/yum.repo.d/   (in client server)
+ls -ltr
+rm ===>(remove the file)
+ls -ltr
+vim client.repo
+  [CLIENT]
+  name=CLIENT
+  baseurl=ftp://(master server id)/pub/yum_rpm/rpmiso
+  enabled=1
+  gpgcheck=0  =======> (save come out of vim)
+yum clean all
+yum repolist
+service vdftpd status (in master server)
+lsblk
+df -h
+mkdir /var/"file name"
+mount /dev/sdb1 /var/"file name"
+df -h
+cd /var/"file name"
+ls -ltr
+yum install nfs-utils -y =======>(execute in both server)
+service nfs restart =======> (in both server)
+/etc/init.d/rpcbind start ========>(in both)
+df -h ======>(in master)
+vim /etc/exports
+/var/"file name"*(rw,sync)
+exportfs -rv
+showmount -e "master server id" ======>(in client server)
+mkdir /var/nfs_yum
+mount "master server id"://var/"file name" /var/nfs_yum
+df -h

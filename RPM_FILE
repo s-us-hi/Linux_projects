@@ -1,0 +1,27 @@
+Cd /var
+ls -ltr RH*
+mkdir /var/rpmiso
+mount -o loop RHEL6.3-20120613.2-Server-x86_64-DVD1.iso /var/rpmiso
+df -h
+cd /var/rpmiso
+ls -ltr
+cd Packages
+ls -ltr
+ rpm --checksig  kernel-doc-2.6.32-279.el6.noarch.rpm
+ rpm -qa
+ rpm -ivh finger-0.17-39.el6.x86_64.rpm
+ rpm -qi finger
+ rpm -q finger
+ rpm -e finger
+ rpm -q finger
+ rpm -qi finger
+ rpm -qip finger-0.17-39.el6.x86_64.rpm
+ rpm -ivh libreport-2.0.9-5.el6.i686.rpm
+ rpm -qpR libreport-2.0.9-5.el6.i686.rpm
+ rpm -Uvh finger-0.17-39.el6.x86_64.rpm
+ rpm -qf /usr/bin/finger
+ rpm -qpR libreport-2.0.9-5.el6.i686.rpm
+ df -h
+ mkdir /var/yum_rpm
+ df -h
+ yes|cp -rvfp /var/rpmiso /var/yum_rpm

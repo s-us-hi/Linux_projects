@@ -1,0 +1,55 @@
+yum install vsftpd -yes
+ls -ld /var/ftp
+ls -ltr
+cd pub
+pwd 
+getenforce ===> enforcing
+setenforce 0 ===> permissive
+cat >txt.txt (create a file)
+cd /tmp (in client server)
+ls -ltr
+getenforce ===> enforcing
+setenforce 0 ===> permissive
+rpm -ivh ftp (tab)
+ftp server "id of master server"
+service ftp status (in master server)
+service ftpd start
+ftp server "id of master server" (in client server)
+anonymous ====> default name (press enter double time)
+ls
+cd pub
+ls
+get =====>file name
+exit
+ls -ltr
+pwd (you should be in /var/ftp/pub)
+mkdir "file name"
+ls -ld "file name"/
+chown ftp:ftp "file name"
+ls -ld "file name"/
+cat >txt.txt (creat a file in master server)
+ftp server id
+anonymous
+enter
+ls
+cd pub
+ls
+cd "file namer"
+put "file name".txt
+change
+exit
+vim vsftpd  =======> (27 line remove #)
+service vsftpd restart
+change
+exit
+ftp service id
+anonymous
+enter
+ls
+cd pub
+ls
+cd "file name"
+put "file name"
+master verify cd /var/ftp/pub/
+cd "file name"
+ls 
