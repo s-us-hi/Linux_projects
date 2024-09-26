@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage ("1. update the syste"){
             steps {
-                sh "apt-get update -y"
-                sh "yum update -y"
+                sh "mkdir -p test"
+                sh "touch test.txt"
             }
         }
 
@@ -17,7 +17,7 @@ pipeline {
                 sh "touch test.txt"
                 sh "df -h"
                 sh "du -ksh"
-                sh "touch txt.txt"
+                sh "touch iostat.txt"
             }
         }
     
