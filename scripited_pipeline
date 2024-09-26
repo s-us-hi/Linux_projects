@@ -17,7 +17,7 @@ pipeline {
                 sh "touch test.txt"
                 sh "df -h"
                 sh "du -ksh"
-                sh "iostat"
+                sh "touch txt.txt"
             }
         }
     
